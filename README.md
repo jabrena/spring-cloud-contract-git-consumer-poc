@@ -1,0 +1,1 @@
+# spring-cloud-contract-git-consumer-poc
