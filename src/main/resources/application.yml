@@ -1,0 +1,13 @@
+logging:
+  level:
+    .: INFO
+    org.springframework: INFO
+
+stubs.api.endpoint: "http://localhost:8081/api/concept1"
+
+---
+
+spring:
+  profiles: production
+
+stubs.api.endpoint: "https://subdomain.corp.com/api/concept1"
