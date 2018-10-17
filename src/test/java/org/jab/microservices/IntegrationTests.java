@@ -17,9 +17,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.REMOTE,
+@AutoConfigureStubRunner(
+        stubsMode = StubRunnerProperties.StubsMode.REMOTE,
         repositoryRoot = "git://https://github.com/jabrena/spring-cloud-contract-git.git",
-        ids = { "org.jab.microservices:spring-cloud-contract-git-producer-poc:0.1.0-SNAPSHOT"})
+        ids = { "org.jab.microservices:spring-cloud-contract-git-producer-poc:0.1.0-SNAPSHOT" })
 public class IntegrationTests {
 
     @Autowired

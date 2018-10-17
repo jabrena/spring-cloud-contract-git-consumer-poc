@@ -13,23 +13,26 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(path="/")
 public class BasicController {
 
-    private static Logger logger = LoggerFactory.getLogger(BasicController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(BasicController.class);
 
     private RestTemplate restTemplate;
 
     private String endpoint;
 
-    BasicController(RestTemplate restTemplate, @Value("${stubs.api.endpoint}") String endpoint) {
+    BasicController(
+            RestTemplate restTemplate,
+            @Value("${stubs.api.endpoint}") String endpoint) {
+
         this.restTemplate = restTemplate;
         this.endpoint = endpoint;
-        logger.info(endpoint);
+        LOGGER.info(endpoint);
     }
 
     @GetMapping(path="entrypoint")
     public ConceptReponse getConcept1() throws Exception {
 
         final String result = getResult(endpoint);
-        logger.info(result);
+        LOGGER.info(result);
 
         return new ConceptReponse("Hello World");
     }
