@@ -3,11 +3,17 @@ logging:
     .: INFO
     org.springframework: INFO
 
-stubs.api.endpoint: "http://localhost:8081/api/concept1"
+subsystem1.api:
+  domain: "http://localhost"
+  port: 8081
+  endpoint: "/api/concept1"
 
 ---
 
 spring:
   profiles: production
 
-stubs.api.endpoint: "https://subdomain.corp.com/api/concept1"
+subsystem1.api:
+  domain: "https://subdomain.corp.com"
+  port: 10081
+  endpoint: "/api/concept1"
